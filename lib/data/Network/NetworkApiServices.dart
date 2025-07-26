@@ -26,11 +26,15 @@ class Networkapiservices extends Baseapiservices {
   @override
   Future getPostApiResponse(String url, dynamic data) async {
     dynamic responseJson;
+
     try {
-      final response = await http.post(Uri.parse(url), body: data);
-      return responseJson = returnResponse(response);
+      final response = await http
+          .post(Uri.parse(url), body: data)
+          .timeout(Duration(seconds: 10));
+
+      responseJson = returnResponse(response);
     } on SocketException {
-      throw FetchDataException("No Internet Connection ");
+      throw FetchDataException("NO internet Connection");
     }
 
     return responseJson;
