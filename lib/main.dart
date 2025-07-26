@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm_architectute_flutter_/utils/Routes/routes.dart';
+import 'package:mvvm_architectute_flutter_/utils/Routes/routes_name.dart';
 import 'package:mvvm_architectute_flutter_/view/loginScreen.dart';
 
 void main() {
@@ -15,6 +17,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Login_screen());
+    return MaterialApp(
+      initialRoute: RoutesName.login,
+      onGenerateRoute: Routes.generateRoute,
+    );
   }
 }
