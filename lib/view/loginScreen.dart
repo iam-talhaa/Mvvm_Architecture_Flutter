@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_architectute_flutter_/utils/Routes/routes_name.dart';
+import 'package:mvvm_architectute_flutter_/utils/utils/Utils.dart';
 
 class Login_screen extends StatefulWidget {
   const Login_screen({super.key});
@@ -18,9 +19,10 @@ class _Login_screenState extends State<Login_screen> {
           Center(
             child: InkWell(
               onTap: () {
+                //  UTils.SHowFlushBar(context);
                 Navigator.pushNamed(context, RoutesName.homescreen);
               },
-              child: Text("Login"),
+              child: InkWell(onTap: () {}, child: Text("Login")),
             ),
           ),
         ],
