@@ -10,12 +10,35 @@ class Login_screen extends StatefulWidget {
 }
 
 class _Login_screenState extends State<Login_screen> {
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _emailcontroller = TextEditingController();
+  TextEditingController _passwwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          TextFormField(
+            controller: _emailcontroller,
+            decoration: InputDecoration(labelText: 'Name'),
+            validator: (value) {
+              if (value == null || value.trim().isEmpty) {
+                return 'Email is required';
+              }
+              return null;
+            },
+          ),
+          TextFormField(
+            controller: _passwwordController,
+            decoration: InputDecoration(labelText: 'Passwordd'),
+            validator: (value) {
+              if (value == null || value.trim().isEmpty) {
+                return 'Password is required';
+              }
+              return null;
+            },
+          ),
           Center(
             child: InkWell(
               onTap: () {
