@@ -3,5 +3,5 @@ class AppUrl {
 
   static var LoginEndpoint = BaseUrl + 'login';
   static var RegisterEndpoint = BaseUrl + 'Resgister';
-  static var Functional = BaseUrl + "Funcitona";
+  static var Functional = BaseUrl + "Funcitonal";
 }
