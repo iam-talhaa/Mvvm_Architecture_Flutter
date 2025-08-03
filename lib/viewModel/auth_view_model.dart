@@ -25,6 +25,7 @@ class AuthViewModel with ChangeNotifier {
 
           print(kDebugMode) {
             print('Error hitted');
+            print('Error hitted');
           }
         });
   }
